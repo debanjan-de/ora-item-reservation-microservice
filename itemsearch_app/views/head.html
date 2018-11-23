@@ -1,0 +1,33 @@
+<!--meta charset="utf-8"-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>{{ page_title }}</title>
+<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.3.3/css/foundation.min.css" rel="stylesheet" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link href="../stylesheets/tooplate_style.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript">
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+<link rel="stylesheet" type="text/css" href="../stylesheets/ddsmoothmenu.css" />
+<!--script type="text/javascript" src="../javascripts/jquery.min.js"></script-->
+<script type="text/javascript" src="../javascripts/ddsmoothmenu.js">
+</script>
+
+<script type="text/javascript">
+ddsmoothmenu.init({
+	mainmenuid: "tooplate_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+</script>

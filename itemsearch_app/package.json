@@ -1,0 +1,16 @@
+{
+  "name": "QuickItemSearch",
+  "version": "0.0.2",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "latest",
+    "express": "latest",
+    "path": "latest",
+    "https": "latest",
+    "request": "latest",
+    "fluent-logger": "latest"
+  }
+}

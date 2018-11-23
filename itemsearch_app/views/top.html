@@ -1,0 +1,57 @@
+<div id="tooplate_header">
+  	<div id="tooplate_top">
+      <div id="tooplate_search">
+            <form action="#" method="get">
+              <input type="text" value="Search" name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)" class="txt_field" />
+              <input type="submit" name="Search" value="" alt="Search" id="searchbutton" title="Search" class="sub_btn"  />
+            </form>
+		</div>
+    </div>
+    <div id="tooplate_titlebar">
+    	<div id="site_title"><h1><a href="#">Quick Item Search</a></h1></div>
+        <div id="tooplate_menu" class="ddsmoothmenu">
+            <ul>
+              <li><a href="/itemsearch" class="selected">{{ home_txt }}</a></li>
+          		<li><a href="/itemsearch">{{ about }}</a></li>
+              <li><a href="/itemsearch">{{ services }}</a></li>
+              <li><a href="/itemsearch">{{ contact }}</a></li>
+              <li><a href="/itemsearch">{{ languages }}</a>
+                <ul>
+                  <li><a href="/itemsearch/bn">Bengali</a></li>
+                  <li><a href="/itemsearch/zh-CN">ChineseSimplified</a></li>
+                  <li><a href="/itemsearch/nl">Dutch</a></li>
+                  <li><a href="/itemsearch/en">English</a></li>
+                  <li><a href="/itemsearch/de">German</a></li>
+                  <li><a href="/itemsearch/hi">Hindi</a></li>
+                  <li><a href="/itemsearch/it">Italian</a></li>
+                  <li><a href="/itemsearch/ja">Japanese</a></li>
+                  <li><a href="/itemsearch/ru">Russian</a></li>
+                  <li><a href="/itemsearch/es">Spanish</a></li>
+                  <li><a href="/itemsearch/te">Tamil</a></li>
+                  <li><a href="/itemsearch/ur">Urdu</a></li>
+                </ul>
+              </li>
+              <li><a href="/itemsearch">{{ settings }}</a>
+                <ul>
+                  <li><a href="/itemsearch">{{ environment }}</a>
+                    <ul>
+                      <li><a href="javascript:set_env_name('DEV');">DEV</a></li>
+                      <li><a href="javascript:set_env_name('TEST');">TEST</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="javascript:set_item_limit(prompt('How many items should be fetched from service cloud (limit)?','10'));">{{ item_limit }}</a></li>
+                  <li><a href="javascript:set_item_offset(prompt('From which position should the item be fetched from service cloud (offset)?','0'));">{{ item_offset }}</a></li>
+                </ul>
+              </li>
+            </ul>
+            <br>
+        </div> <!-- end of tooplate_menu -->
+    </div>
+    <div id="tooplate_mid_wrapper">
+        <div id="mid_left">
+        <div id="mid_title">{{ title }}</div>
+        <p id="mid_text">  {{ description }}</p>
+        <div class="cleaner"></div>
+    </div>
+
+</div>

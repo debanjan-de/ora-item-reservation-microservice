@@ -1,0 +1,91 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block itemnum_query %}
+<div class="col-md-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4><i class="fa fa-fw fa-check"></i>{{ search_itemnum_txt }}</h4>
+        </div>
+        <div id="itemnum_div" class="panel-body">
+           <!--form method="post" action="/item_num/find"-->
+             {{ itemnum_txt }}<input type="text" id="itemnum" name="itemnum" autocomplete="on"><br>
+             <div id="itemnum_resp">
+               <!--load the response here-->
+             </div>
+             <div id="language_hidden" style="display: none;">{{ language }}</div>
+             <div id="env_hidden" style="display: none;">DEV</div>
+             <div id="item_limit_hidden" style="display: none;">10</div>
+             <div id="item_offset_hidden" style="display: none;">0</div>
+             <button type="reset" class="btn btn-default" onclick='page_reset("itemnum")'>{{ reset_txt }}</button>
+             <button type="submit" class="btn btn-default" onclick='getItemDetailsTxt(document.getElementById("itemnum").value)'>{{ find_item_txt }}</button>
+           <!--/form-->
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block itemimg_query %}
+<div class="col-md-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4><i class="fa fa-fw fa-check"></i>{{ search_img_txt }}</h4>
+        </div>
+        <div class="panel-body">
+           <!--form action="/item_img/find" method="post" id="itemimgfrm" enctype="multipart/form-data"-->
+             {{ item_img_txt }}<input type="file" id="itemimg" name="itemimg">
+             <div id="imghlink">
+               <!--Show the image hyper link here-->
+             </div><br>
+             <div id="imgpreview">
+               <!--load the image here-->
+             </div><br>
+             <button type="reset" class="btn btn-default" onclick='page_reset("itemimg")'>{{ reset_txt }}</button>
+             <button type="button" class="btn btn-default" id="itemimgbtn">{{ find_item_txt }}</button>
+           <!--/form-->
+        </div>
+    </div>
+</div>
+<script>
+function renderImage(file){
+  var reader = new FileReader();
+  reader.onload = function(event){
+    the_url = event.target.result
+    $('#imgpreview').html("<img src='"+the_url+"' />")
+  }
+  reader.readAsDataURL(file);
+}
+document.getElementById('itemimg').onchange = function () {
+    renderImage(this.files[0]);
+}
+function getRootUrl() {
+		return window.location.origin
+			? window.location.origin + '/'
+			: window.location.protocol + '/' + window.location.host + '/';
+}
+</script>
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+$('#itemimg').on('change', function(){
+  var formData = new FormData();
+  var file = $(this).get(0).files[0];
+  formData.append('itemimg', file, file.name);
+  $.ajax({
+    url: '/item_img/upload',
+    type: 'POST',
+    data: formData,
+    processData: false,
+    contentType: false,
+    success: function(data){
+      $('#imghlink').html("<a href='"+getRootUrl()+"item_img/"+file.name+"'>link</a>");
+    },
+    error: function(){
+      $('#imghlink').html("<a href='#'>error</a>");
+    }
+  });
+});
+</script>
+{% endblock %}

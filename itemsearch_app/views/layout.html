@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    {% block head %} {% include 'head.html' %} {% endblock %}
+    <style>{% block carousel %} {% include "../public/stylesheets/carousel.css" %} {% endblock %}</style>
+    <script>{% block common-js %} {% include "../public/javascripts/common.js" %} {% endblock %}</script>
+  </head>
+  <body>
+    {% block top %} {% include 'top.html' %} {% endblock %}
+    {% block itemnum_query %}
+    {% endblock %}
+
+    {% block itemimg_query %}
+    {% endblock %}
+
+    <div id="main_results">
+      <hr>
+    </div>
+
+    {% block footer %} {% include 'footer.html' %} {% endblock %}
+
+  </body>
+</html>
