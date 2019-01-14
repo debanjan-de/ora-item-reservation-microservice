@@ -11,11 +11,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 /*****************************************
-Logging framework initialization
+Logging framework initialization again
 *****************************************/
 /*var logger = require('fluent-logger');
 logger.configure('fluentd.test', {
-  host: 'localhost',
+  host: 'localhost ',
   port: 24224,
   timeout: 3.0,
   reconnectInterval: 600000 // 10 minutes
