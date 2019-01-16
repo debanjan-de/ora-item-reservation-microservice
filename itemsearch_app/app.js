@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 /*****************************************
-Logging framework initialization again
+Logging framework initialization again and again
 *****************************************/
 /*var logger = require('fluent-logger');
 logger.configure('fluentd.test', {
