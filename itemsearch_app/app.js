@@ -10,8 +10,12 @@ var item_img = require('./public/javascripts/item_img'),
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+/*
+Making changes
+*/
+
 /*****************************************
-Logging framework initialization again and again and again
+Logging framework initialization 
 *****************************************/
 /*var logger = require('fluent-logger');
 logger.configure('fluentd.test', {
