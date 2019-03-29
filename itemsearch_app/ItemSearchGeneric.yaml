@@ -10,7 +10,7 @@ spec:
   ports:
   - port: 8091 
     targetPort: 8091
-    protocol:TCP 
+    protocol: TCP 
     #nodePort: 31091 -- removed for GCP and Added protocol:TCP 
   selector:
     app: itemreservation-msa
