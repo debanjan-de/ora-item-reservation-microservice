@@ -5,11 +5,13 @@ metadata:
   labels:
     app: itemreservation-msa
 spec:
-  type: NodePort
+  #type: NodePort --removed for GCP and Added 'type: LoadBalancer'
+  type: LoadBalancer 
   ports:
-  - port: 8091
+  - port: 8091 
     targetPort: 8091
-    nodePort: 31091
+    protocol:TCP 
+    #nodePort: 31091 -- removed for GCP and #Added protocol:TCP 
   selector:
     app: itemreservation-msa
 ---
